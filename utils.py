@@ -29,13 +29,13 @@ def get_transforms():
 
 def get_label_emotion(label : int) -> str:
     label_emotion_map = { 
-        0: 'Angry',
-        1: 'Disgust', 
-        2: 'Fear', 
-        3: 'Happy', 
-        4: 'Sad', 
-        5: 'Surprise', 
-        6: 'Neutral'        
+        0: 'Marah',
+        1: 'Jijik', 
+        2: 'Takut', 
+        3: 'Senang', 
+        4: 'Sedih', 
+        5: 'Terkejut', 
+        6: 'Netral'
     }
     return label_emotion_map[label]
 
@@ -109,3 +109,9 @@ def visualize_confusion_matrix(confusion_matrix):
     sn.set(font_scale=1.1) # for label size
     sn.heatmap(df_cm, annot=True, annot_kws={"size": 16}) # font size
     plt.show()
+
+def get_emotion_image(emotion):
+    # Replace this path with the actual path to your emotion images
+    emotion_image_path = f'path_to_{emotion}_image.jpg'
+    emotion_image = cv2.imread(emotion_image_path)
+    return emotion_image
